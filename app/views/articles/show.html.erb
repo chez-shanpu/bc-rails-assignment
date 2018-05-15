@@ -1,14 +1,12 @@
 <div id="title">
-    <div>
-        <p><%= @article.created_at %></p>
-        <h1><%= @article.title %></h1>
-    </div>
+  <div>
+    <p><%= @article.created_at %></p>
+    <h1><%= @article.title %></h1>
+  </div>
 </div>
 <div id="article_wrap">
-    <div id="content">
-      <p>
-        <%= @article.content %>              
-      </p>
-    </div>
-<%= render "layouts/sidebar" %>
+  <div id="content">
+    <%= @article.content %>
+  </div>
+  <%= render "layouts/sidebar" %>
 </div>
