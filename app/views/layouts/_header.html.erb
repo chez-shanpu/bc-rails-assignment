@@ -2,8 +2,13 @@
   <p id="logo"><a href="">RailsCamp<span>Blog</span></a></p>
   <nav>
     <ul>
-      <li><a href="">トップ</a></li>
-      <li><a href="">新規投稿</a></li>
+      <% if user_signed_in? %>
+        <%= link_to "新規投稿", new_article_path %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'ユーザー登録', new_user_registration_path %>
+        <%= link_to 'ログイン', new_user_session_path %>
+      <% end %>
       <div class="clear"></div>
     </ul>
   </nav>
