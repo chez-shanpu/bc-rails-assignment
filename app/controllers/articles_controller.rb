@@ -20,6 +20,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find_by(params[:id])
+    REDIS.zincrby "articles", 1, @article.id
   end
 
   def edit
