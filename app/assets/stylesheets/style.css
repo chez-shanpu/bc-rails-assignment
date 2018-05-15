@@ -172,6 +172,7 @@ div#title h1{
 div#content{
     width: 660px;
     float: left;
+    /*color: white;*/
 }
 
 div#content h2{

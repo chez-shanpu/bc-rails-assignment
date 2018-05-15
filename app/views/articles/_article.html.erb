@@ -1,0 +1,10 @@
+<li id="article">
+  <span class="article" id="header">
+    <span class="timestamp">
+      <%= render @article.created_at %>
+      <%= render @article.user %>
+    </span>
+    <%= link_to "編集", edit_article_path %>
+    <%= link_to "削除", article_path, method = destroy %>
+  </span>
+</li>
