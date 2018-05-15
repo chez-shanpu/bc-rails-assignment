@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BcRailsAssignment</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<html>
+<head lang="ja">
+  <meta charset="UTF-8">
+  <title>Rails Camp Blog</title>
+<!--  <link rel="stylesheet" href="style.css" type="text/css" media="screen">-->
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all',
+                          'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application',
+                             'data-turbolinks-track': 'reload' %>
+</head>
 
   <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= render 'layouts/header' %>
+<!--  <div class="container">-->
     <%= yield %>
+    <%= render 'layouts/footer' %>
+<!--  </div>-->
   </body>
 </html>

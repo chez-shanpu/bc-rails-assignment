@@ -1,0 +1,20 @@
+<div id="main">
+  <%= image_tag("main-img.jpg", alt: "Workspace")%>
+</div>
+
+<div id="article_wrap">
+  <div id="article_list">
+    <% @articles.each do |article| %>
+      <h2>
+        <%= link_to article.title, article_path(article.id) %>
+      </h2>
+      <p> <%= article.created_at %></p>
+      <% if current_user == article.user %>
+        <%= link_to "編集", edit_article_path(article.id) %>
+        <%= link_to "削除", article_path(article.id), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= render 'layouts/sidebar' %>
+  <div class="clear"></div>
+</div>
